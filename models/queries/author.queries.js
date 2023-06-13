@@ -1,5 +1,5 @@
 const {Pool} = require('pg');
-const pool = require('../utils/db_pgsql');
+const pool = require('../../utils/db_pgsql');
 
 const entry_authors = {
     getAuthorByEmail: `

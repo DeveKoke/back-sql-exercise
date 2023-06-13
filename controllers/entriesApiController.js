@@ -55,6 +55,7 @@ const getAuthorEmail = async (req, res) => {
 const createEntry = async (req, res) => {
     const dataEntry = req.body; // {title,content,email,category}
     const response = await entry.createEntry(dataEntry);
+    console.log('aquí llega')
     res.status(201).json({
         "items_created": response,
         data: dataEntry

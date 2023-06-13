@@ -104,63 +104,47 @@ const entries = {
     getAllEntries,
     createEntry,
     updateEntry,
-    deleteEntry,
+    deleteEntry
 }
 
 module.exports = entries;
 
 
 // Pruebas GET
-getEntriesByEmail("birja@thebridgeschool.es")
-    .then(data=>console.log(data));
+// getEntriesByEmail("birja@thebridgeschool.es")
+//     .then(data=>console.log(data));
 
-getAllEntries()
-.then(data=>console.log(data));
-
-
-//*DELETE AN ENTRY 
-deleteEntry(title).then(data=>console.log(data));
+// getAllEntries()
+// .then(data=>console.log(data));
 
 
+//* PRUEBA DELETE AN ENTRY 
+// deleteEntry("birja@thebridgeschool.es").then(data=>console.log(data));
 
-//* CREAR UNA ENTRY
-let newEntry = {
-    title: "Se acabaron las mandarinas de TB",
-    content: "Corren rumores de que papa noel tenía un saco vacio y lo llenó",
-    email: "guillermu@thebridgeschool.es",
-    category: "sucesos"
-}
-createEntry(newEntry)
-    .then(data => console.log(data))
+
+
+//* PRUEBA CREAR UNA ENTRY
+// let newEntry = { 
+//     title: "La tortilla de patatas declarada patrimonio de la Humanidad", 
+//     content: "La UNESCO declara la tortilla de patatas como patrimonio para toda la humanidad. A parti de ahora serán un 25% más baratas", 
+//     email: "muchelle@thebridgeschool.es", 
+//     category: "sociedad"
+    
+//   }
+// createEntry(newEntry)
+//     .then(data => console.log(data))
     
 
-//* ACTUALIZAR UNA ENTRY
-    let dataUpdateEntry = {
-        old_title: "Se acabaron las mandarinas de TB",
-        new_title: "Fernando Alonso gana su tercer título", 
-        content: "Alonso por fín consiguió su tan ansiado tercer título tras una temporada de infarto, remontando al RedBull de Verstappen una distancia de 35 pts.",
-        email: "birja@thebridgeschool.es",
-        category: "deportes"
-    }
-updateEntry(dataUpdateEntry)
-.then(data => console.log(data));
+// //* PRUEBA ACTUALIZAR UNA ENTRY
+//     let dataUpdateEntry = {
+//         old_title: "Se acabaron las mandarinas de TB",
+//         new_title: "Fernando Alonso gana su tercer título", 
+//         content: "Alonso por fín consiguió su tan ansiado tercer título tras una temporada de infarto, remontando al RedBull de Verstappen una distancia de 35 pts.",
+//         email: "birja@thebridgeschool.es",
+//         category: "deportes"
+//     }
+// updateEntry(dataUpdateEntry)
+// .then(data => console.log(data));
 
-let newAuthor = {
-    name:"Gonzalo", 
-    surname: "Serrano", 
-    email: "gonzalo27@gmail.com", 
-    image: "https://pbs.twimg.com/profile_images/1514355360169177092/V0cdan8Z_400x400.jpg"
-}
-createAuthor(newAuthor)
-.then(data => console.log(data));
 
-let updateDataAuthor = {
-    name:"Borjita", 
-    surname: "Riveru",
-    email_1: "borjita@thebridgeschool.es", 
-    image: "https://randomuser.me/api/portraits/thumb/men/60.jpg", 
-    email_2: "birja@thebridgeschool.es"
-}
-updateAuthor(updateDataAuthor)
-.then(data => console.log(data));
 

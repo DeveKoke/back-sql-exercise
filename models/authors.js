@@ -99,26 +99,26 @@ const authors = {
 module.exports = authors;
 
 //*DELETE AN AUTHOR
-deleteAuthor(email).then(data=>console.log(data));
+// deleteAuthor("birja@thebridgeschool.es").then(data=>console.log(data));
 
     
 //* CREAR UN AUTHOR
-    let newAuthor = {
-        name:"Gonzalo", 
-        surname: "Serrano", 
-        email: "gonzalo27@gmail.com", 
-        image: "https://pbs.twimg.com/profile_images/1514355360169177092/V0cdan8Z_400x400.jpg"
-    }
-    createAuthor(newAuthor)
-    .then(data => console.log(data));
+//     let newAuthor = {
+//         name:"Gonzalo", 
+//         surname: "Serrano", 
+//         email: "gonzalo27@gmail.com", 
+//         image: "https://pbs.twimg.com/profile_images/1514355360169177092/V0cdan8Z_400x400.jpg"
+//     }
+//     createAuthor(newAuthor)
+//     .then(data => console.log(data));
     
 //* ACTUALIZAR UNA ENTRY
-let updateDataAuthor = {
-    name:"Borjita", 
-    surname: "Riveru",
-    email_1: "borjita@thebridgeschool.es", 
-    image: "https://randomuser.me/api/portraits/thumb/men/60.jpg", 
-    email_2: "birja@thebridgeschool.es"
-}
-updateAuthor(updateDataAuthor)
-.then(data => console.log(data));
+// let updateDataAuthor = {
+//     name:"Borjita", 
+//     surname: "Riveru",
+//     email_1: "borjita@thebridgeschool.es", 
+//     image: "https://randomuser.me/api/portraits/thumb/men/60.jpg", 
+//     email_2: "birja@thebridgeschool.es"
+// }
+// updateAuthor(updateDataAuthor)
+// .then(data => console.log(data));

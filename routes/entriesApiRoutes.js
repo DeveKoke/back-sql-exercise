@@ -3,7 +3,7 @@ const express = require('express');
 const entriesApiController = require("../controllers/entriesApiController");
 const entriesApiRouter = express.Router();
 
-entriesApiRouter.get('/', entriesApiController.getEntries);
+entriesApiRouter.get('/', entriesApiController.getEntriesEmail);
 entriesApiRouter.post('/', entriesApiController.createEntry);
 entriesApiRouter.put('/', entriesApiController.updateEntry);
 entriesApiRouter.delete('/title', entriesApiController.deleteEntry);
@@ -11,7 +11,7 @@ entriesApiRouter.get('/authors', entriesApiController.getAllAuthors);
 entriesApiRouter.get('/authors?', entriesApiController.getAuthorEmail);
 entriesApiRouter.post('/authors', entriesApiController.createAuthor);
 entriesApiRouter.put('/authors', entriesApiController.updateAuthor);
-entriesApiRouter.put('/authors', entriesApiController.deleteAuthor);
+entriesApiRouter.delete('/authors', entriesApiController.deleteAuthor);
 
 
 module.exports = entriesApiRouter;
