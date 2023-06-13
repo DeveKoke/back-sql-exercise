@@ -1,5 +1,3 @@
-const {Pool} = require('pg');
-const pool = require('../../utils/db_pgsql');
 
 const entry_queries = {
     getEntriesByEmail: `
@@ -20,6 +18,7 @@ const entry_queries = {
     SET title = $1, content=$2, date=NOW(), id_author=(SELECT id_author FROM authors WHERE email=$3), category=$4
     WHERE title = $5;`,
     deleteEntry: `DELETE FROM entries
-	WHERE title=$1`
+	WHERE title=$1`,
+    deleteTableEntries: `DROP TABLE $1;`
 }
 module.exports = entry_queries;

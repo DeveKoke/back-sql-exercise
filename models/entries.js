@@ -1,13 +1,4 @@
-// const { Pool } = require('pg');
-// const queries = require('./queries')
-// const pool = new Pool({
-//     host: 'localhost',
-//     user: 'alex',
-//     database: 'postgres',
-//     password: '1234'
-// }) 
-
-const pool = require('../utils/db_pgsql'); // Conexión a la BBDD
+const pool = require('../utils/db_pgsql'); // Conexión a la BBDD llamando al fichero de utils
 const entryQueriesDoc = require('./queries/entry.queries'); // Queries SQL
 
 
@@ -98,18 +89,37 @@ const deleteEntry = async (entry) => { // entry es por donde llega el objeto que
     return result
 }
 
+//* DELETE TABLE 
+const deleteTableEntries = async (entry) => { // entry es por donde llega el objeto queries de entryQueriesDoc
+    const {tableName} = entry;
+    let client, result;
+    try {
+        client = await pool.connect(); // Espera a abrir conexion
+        const data = await client.query(entryQueriesDoc.deleteTableEntries,[tableName])
+        result = data.rowCount
+    } catch (err) {
+        console.log(err);
+        throw err;
+    } finally {
+        client.release();
+    }
+    return result
+}
 
 const entries = {
     getEntriesByEmail,
     getAllEntries,
     createEntry,
     updateEntry,
-    deleteEntry
+    deleteEntry,
+    deleteTableEntries
 }
 
 module.exports = entries;
 
 
+
+//*  ---------------------------  PRUEBAS DE EJECUCIÓN DE ARCHIVO --------------------------------------------
 // Pruebas GET
 // getEntriesByEmail("birja@thebridgeschool.es")
 //     .then(data=>console.log(data));

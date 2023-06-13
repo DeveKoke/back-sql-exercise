@@ -88,15 +88,38 @@ const deleteAuthor = async (entry) => { // entry es por donde llega el objeto qu
     return result
 }
 
+//* DELETE TABLE 
+const deleteTableEntries = async (entry) => { // entry es por donde llega el objeto queries de entryQueriesDoc
+    const {tableName} = entry;
+    let client, result;
+    try {
+        client = await pool.connect(); // Espera a abrir conexion
+        const data = await client.query(authorQueriesDoc.deleteTableAuthors,[tableName])
+        result = data.rowCount
+    } catch (err) {
+        console.log(err);
+        throw err;
+    } finally {
+        client.release();
+    }
+    return result
+}
+
 const authors = {
     getAllAuthors,
     getAuthorByEmail,
     createAuthor, 
     updateAuthor,
-    deleteAuthor
+    deleteAuthor,
+    deleteTableEntries
 }
 
 module.exports = authors;
+
+
+
+//*  ---------------------------  PRUEBAS DE EJECUCIÓN DE ARCHIVO --------------------------------------------
+
 
 //*DELETE AN AUTHOR
 // deleteAuthor("birja@thebridgeschool.es").then(data=>console.log(data));

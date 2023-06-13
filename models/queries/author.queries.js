@@ -1,5 +1,3 @@
-const {Pool} = require('pg');
-const pool = require('../../utils/db_pgsql');
 
 const entry_authors = {
     getAuthorByEmail: `
@@ -15,6 +13,7 @@ const entry_authors = {
 	SET name= $1, surname=$2, email=$3, image=$4
 	WHERE email =$5;`,
     deleteAuthorByEmail: `DELETE FROM authors
-	WHERE title=$1`
+	WHERE title=$1`,
+    deleteTableAuthors: `DROP TABLE $1;`
 }
 module.exports = entry_authors;
