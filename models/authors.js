@@ -135,7 +135,7 @@ module.exports = authors;
 //     createAuthor(newAuthor)
 //     .then(data => console.log(data));
     
-//* ACTUALIZAR UNA ENTRY
+//* ACTUALIZAR UN AUTHOR
 // let updateDataAuthor = {
 //     name:"Borjita", 
 //     surname: "Riveru",

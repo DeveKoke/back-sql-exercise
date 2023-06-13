@@ -83,7 +83,7 @@ const updateAuthor = async (req, res) => {
 
 const updateEntry = async (req, res) => {
     const dataEntry = req.body; // {new_title,content,email,category, old_title}
-    const response = await author.updateEntry(dataEntry);
+    const response = await entry.updateEntry(dataEntry);
     res.status(201).json({
         "items_updated": response,
         data: dataEntry

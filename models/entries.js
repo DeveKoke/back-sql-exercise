@@ -145,13 +145,13 @@ module.exports = entries;
 //     .then(data => console.log(data))
     
 
-// //* PRUEBA ACTUALIZAR UNA ENTRY
+//* PRUEBA ACTUALIZAR UNA ENTRY
 //     let dataUpdateEntry = {
-//         old_title: "Se acabaron las mandarinas de TB",
-//         new_title: "Fernando Alonso gana su tercer título", 
-//         content: "Alonso por fín consiguió su tan ansiado tercer título tras una temporada de infarto, remontando al RedBull de Verstappen una distancia de 35 pts.",
+//         old_title: "Descubren el motor de agua",
+//         new_title: "Descubren el motor de H2O", 
+//         content: "Fin de los combustibles fósiles. A partir de ahora usaremos agua en nuestros coches",
 //         email: "birja@thebridgeschool.es",
-//         category: "deportes"
+//         category: "ciencia"
 //     }
 // updateEntry(dataUpdateEntry)
 // .then(data => console.log(data));
