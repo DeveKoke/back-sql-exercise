@@ -29,7 +29,7 @@ const getAllAuthors = async (req, res) => {
     else {
         authors = await author.getAllAuthors();
     }
-    res.status(200).json(entries); // [] con las entries encontradas
+    res.status(200).json(author); // [] con las entries encontradas
 }
 
 const getAuthorEmail = async (req, res) => {
@@ -40,7 +40,7 @@ const getAuthorEmail = async (req, res) => {
     else {
         authors = await author.getAuthorByEmail();
     }
-    res.status(200).json(entries); // [] con las entries encontradas
+    res.status(200).json(author); // [] con las entries encontradas
 }
 
 //createEntry
@@ -71,10 +71,10 @@ const createAuthor = async (req, res) => {
     });
 }
 
-// Crear entry por email
+// Editar author por email
 const updateAuthor = async (req, res) => {
     const dataAuthor = req.body; // {new_title,content,email,category, old_title}
-    const response = await author.updaupdateAuthorteEntry(dataAuthor);
+    const response = await author.updateAuthor(dataAuthor);
     res.status(200).json({
         "autor actualizado": response,
         data: dataAuthor
